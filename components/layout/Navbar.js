@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect } from "react";
 import { Bell, Search, User, Menu, LogOut, Settings, UserCircle } from "lucide-react";
 import { cn } from "@/utils/cn";
