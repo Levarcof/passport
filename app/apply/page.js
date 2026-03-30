@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   User, MapPin, FileUp, Calendar, CheckCircle2, 
@@ -11,6 +11,8 @@ import { Button } from "@/components/ui/Button";
 import { cn } from "@/utils/cn";
 import { useRouter, useSearchParams } from "next/navigation";
 import { uploadToCloudinary } from "@/utils/cloudinary-upload";
+
+export const dynamic = "force-dynamic";
 
 const steps = [
   { id: 1, title: "Personal", icon: User },
@@ -331,9 +333,7 @@ const Step5 = ({ formData }) => (
   </div>
 );
 
-/** --- MAIN APPLY PAGE --- */
-
-export default function ApplyPage() {
+function ApplyPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const draftId = searchParams.get("id");
@@ -609,5 +609,17 @@ export default function ApplyPage() {
         </div>
       </Card>
     </div>
+  );
+}
+
+export default function ApplyPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-[400px]">
+        <Loader2 className="h-10 w-10 text-indigo-600 animate-spin" />
+      </div>
+    }>
+      <ApplyPageContent />
+    </Suspense>
   );
 }

@@ -7,6 +7,8 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { useRouter } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 export default function DraftsPage() {
   const router = useRouter();
   const [drafts, setDrafts] = useState([]);
