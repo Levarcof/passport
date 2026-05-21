@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛂 PassportEase - Secure Digital Passport Application Platform
 
-## Getting Started
+PassportEase is a full-stack web application designed to digitize and streamline the traditional passport application process. The platform allows citizens to securely fill out multi-step application forms, upload verified government documentation, and track their application lifecycle in real time through an intuitive, modern dashboard.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Core Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 📄 Intelligent Multi-Step Application Form
+*   **State Management:** Complex multi-page form processing handling personal data, residential history, and emergency contacts with client-side validation.
+*   **Draft Auto-Save:** Progressive form-filling that allows users to save draft states and return to complete them later.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 📁 Secure Document Upload & Management
+*   **Multi-Format Support:** Programmatic handling of mandatory digital document uploads (Identity Proof, Address Proof, and Passport Photos).
+*   **File Validation:** Strict client-side and server-side evaluation of file sizes and extensions to ensure data integrity.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 📊 Real-Time Application Lifecycle Tracking
+*   **Dynamic Status Dashboard:** A beautiful timeline interface showing live status updates of the application (e.g., *Draft, Submitted, Under Verification, Dispatched, Approved*).
+*   **Unique Reference Generation:** Automatic tracking ID compilation upon form submission for quick database queries.
 
-## Learn More
+### 🖥️ Admin Control Panel (Internal Utility)
+*   *Designed for backend simulation:* Capability for an administrative user to update application statuses, download user documents, and approve or reject submissions.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Tech Stack & Architecture
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Layer | Technology | Engineering Purpose |
+| :--- | :--- | :--- |
+| **Frontend** | **Next.js (App Router)** | Used for server-side rendering (SSR), structural route protection, and optimal Core Web Vitals performance. |
+| **Styling** | **Tailwind CSS** | Utilized for a clean, accessible, and responsive user interface resembling modern enterprise portals. |
+| **Database** | **MongoDB** | Schema-flexible document repository perfectly suited for complex, nested passport form schemas. |
+| **ODM / DB Driver** | **Mongoose** | Used to implement data-modeling, strict schema validation, and optimized population queries. |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the Repository**
+   ```bash
+   git clone [https://github.com/levarcof/passport.git](https://github.com/levarcof/passport.git)
+   cd passport
